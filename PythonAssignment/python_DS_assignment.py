@@ -166,3 +166,14 @@ def findLongestWord(sentence):
 sentence = "The quick browns fox jumps over the lazy dog"
 print("The longest word is:", findLongestWord(sentence))   #output-->browns
 
+# 21. Find the shortest word in a string.
+def findShortestWord(sentences):
+    word=sentences.split()
+    shortestWord=word[0]
+    for words in word:
+        if len(words)<len(shortestWord):
+            shortestWord=words
+    return shortestWord
+
+sentence = "The quick brown fox jumps over the lazy dog"
+print("The shortest word is:", findShortestWord(sentence))  #output-->The 
