@@ -73,96 +73,96 @@ str7="Hello , Python!"
 str7.replace("Python","Java")
 # output-->'Hello , Java!'
 
-# # 11. Count the occurrences of a word in a string.
-# def occurrencesWord(text,word):
-#     if word in text:
-#         return text.count(word)
-# text="Python is easy to learn. Python is powerful and versatile."    
-# word="Python"
+# 11. Count the occurrences of a word in a string.
+def occurrencesWord(text,word):
+    if word in text:
+        return text.count(word)
+text="Python is easy to learn. Python is powerful and versatile."    
+word="Python"
 
-# print(occurrencesWord(text,word))  #output-->2
+print(occurrencesWord(text,word))  #output-->2
 
-# # 12. Find the first occurrence of a word in a string.
-# def occurrencesFirstWord(texts,words):
-#     if words in texts:
-#         return texts.find(words)
-#     else:
-#         return -1
-# text="Python is easy to learn. Python is powerful and versatile."    
-# word="Python"
+# 12. Find the first occurrence of a word in a string.
+def occurrencesFirstWord(texts,words):
+    if words in texts:
+        return texts.find(words)
+    else:
+        return -1
+text="Python is easy to learn. Python is powerful and versatile."    
+word="Python"
 
-# print(occurrencesFirstWord(text,word))  #output-->0
+print(occurrencesFirstWord(text,word))  #output-->0
 
-# # 13. Find the last occurrence of a word in a string.
-# def occurrencesLastWord(text1,word1):
-#     if word1 in text1:
-#         return text1.rindex(word1)
-#     else: 
-#         return -1
-# text1="Python is easy to learn. Python is powerful and versatile."    
-# word1="Python"
+# 13. Find the last occurrence of a word in a string.
+def occurrencesLastWord(text1,word1):
+    if word1 in text1:
+        return text1.rindex(word1)
+    else: 
+        return -1
+text1="Python is easy to learn. Python is powerful and versatile."    
+word1="Python"
 
-# print(occurrencesLastWord(text1,word1))  #output-->25
+print(occurrencesLastWord(text1,word1))  #output-->25
 
-# # 14. Split a string into a list of words
-# def splitString(string):
-#     return string.split()
-# string="Python is powerful and versatile."
-# print(splitString(string))   #output-->['Python', 'is', 'powerful', 'and', 'versatile.']
+# 14. Split a string into a list of words
+def splitString(string):
+    return string.split()
+string="Python is powerful and versatile."
+print(splitString(string))   #output-->['Python', 'is', 'powerful', 'and', 'versatile.']
 
-# # 15. Join a list of words into a string.
-# def wordsIntoString(lists,str):
-#     return  str.join(lists)
-# lists=["aa","ab","bb"]
-# string=" "
-# print(wordsIntoString(lists,string))   #output-->aa ab bb
+# 15. Join a list of words into a string.
+def wordsIntoString(lists,str):
+    return  str.join(lists)
+lists=["aa","ab","bb"]
+string=" "
+print(wordsIntoString(lists,string))   #output-->aa ab bb
 
-# # 16. Convert a string where words are separated by spaces to one where words
-# # are separated by underscores.
-# def separatedBySpaces(text2):
-#     return text2.replace(" ","_")
+# 16. Convert a string where words are separated by spaces to one where words
+# are separated by underscores.
+def separatedBySpaces(text2):
+    return text2.replace(" ","_")
 
-# text2="Words are separated by spaces"
-# print(separatedBySpaces(text2))  #output-->Words_are_separated_by_spaces
+text2="Words are separated by spaces"
+print(separatedBySpaces(text2))  #output-->Words_are_separated_by_spaces
 
-# # 17. Check if a string starts with a specific word or phrase
-# def stringStartsWith(str2,specifiWord):
-#     return str2.startswith(specifiWord)
+# 17. Check if a string starts with a specific word or phrase
+def stringStartsWith(str2,specifiWord):
+    return str2.startswith(specifiWord)
 
-# str2="Python is easy to learn. Python is powerful and versatile."
-# specifiWord="Python"
-# if stringStartsWith(str2,specifiWord):
-#     print(f"string is starts with a {specifiWord}")
-# else:    
-#     print(f"string is not starts with a {specifiWord}")   #output--> string is starts with a Python
+str2="Python is easy to learn. Python is powerful and versatile."
+specifiWord="Python"
+if stringStartsWith(str2,specifiWord):
+    print(f"string is starts with a {specifiWord}")
+else:    
+    print(f"string is not starts with a {specifiWord}")   #output--> string is starts with a Python
 
-# # 18. Check if a string ends with a specific word or phrase
-# def stringEndsWith(str3,specifiWord1):
-#     return str3.startswith(specifiWord1)
+# 18. Check if a string ends with a specific word or phrase
+def stringEndsWith(str3,specifiWord1):
+    return str3.startswith(specifiWord1)
 
-# str3="Python is easy to learn. Python is powerful and versatile."
-# specifiWord1="Python"
-# if stringEndsWith(str2,specifiWord):
-#     print(f"string is end with a {specifiWord}")
-# else:    
-#     print(f"string is not end with a {specifiWord}")   #output-->string is end with a Python
+str3="Python is easy to learn. Python is powerful and versatile."
+specifiWord1="Python"
+if stringEndsWith(str2,specifiWord):
+    print(f"string is end with a {specifiWord}")
+else:    
+    print(f"string is not end with a {specifiWord}")   #output-->string is end with a Python
 
-# # 19. Convert a string to title case (e.g., "hello world" to "Hello World")
-# def stringToTitle(str3):
-#     return str3.title()
+# 19. Convert a string to title case (e.g., "hello world" to "Hello World")
+def stringToTitle(str3):
+    return str3.title()
 
-# str3="my name is harshada chaudhari"
-# print(stringToTitle(str3))   #output--> My Name Is Harshada Chaudhari
+str3="my name is harshada chaudhari"
+print(stringToTitle(str3))   #output--> My Name Is Harshada Chaudhari
 
-# # 20. Find the longest word in a string.
-# def findLongestWord(sentence):
-#     words=sentence.split()
-#     longestWord=""
-#     for word in words:
-#         if len(word)>len(longestWord):
-#             longestWord=word
-#     return longestWord    
+# 20. Find the longest word in a string.
+def findLongestWord(sentence):
+    words=sentence.split()
+    longestWord=""
+    for word in words:
+        if len(word)>len(longestWord):
+            longestWord=word
+    return longestWord    
 
-# sentence = "The quick browns fox jumps over the lazy dog"
-# print("The longest word is:", findLongestWord(sentence))   #output-->browns
+sentence = "The quick browns fox jumps over the lazy dog"
+print("The longest word is:", findLongestWord(sentence))   #output-->browns
 
