@@ -62,10 +62,10 @@ def containWord(string,speciWord):
 string="Hello world, welcome to Python."
 speciWord="welcome"
 
-if containWord(string,speci_word):
-    print(f"The word '{speci_word}' is present in the string")
+if containWord(string,speciWord):
+    print(f"The word '{speciWord}' is present in the string")
 else:
-    print(f"The word '{speci_word}' is not present in the string")
+    print(f"The word '{speciWord}' is not present in the string")
     #output --> The word 'welcome' is present in the string
 
 # 10. Replace a word in a string with another word.
