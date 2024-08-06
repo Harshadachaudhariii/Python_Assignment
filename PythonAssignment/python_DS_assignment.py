@@ -186,7 +186,6 @@ def reverseOrderOfWords(sentence2):
 
 sentence2 = "The quick brown fox jumps over the lazy dog"
 print(reverseOrderOfWords(sentence2))
-
 # output-->dog lazy the over jumps fox brown quick The
 
 # 23. Check if a string is alphanumeric.
@@ -197,5 +196,55 @@ if checkAlphanumeric(str8):
     print("It is alphanumeric string")
 else:    
     print("It is not alphanumeric string")
-    
-    
+
+#24. Extract all digits from a string.
+def extractAllDigits(string):
+    digit=[int(i) for i in string if i.isdigit()]
+    return digit
+strs=input("enter the string")
+print(extractAllDigits(strs))  
+# input-->string6783  output-->[6,7,8,3]
+
+# 25. Extract all alphabets from a string
+def extractAllAlphabets(string):
+    alphabets=[str(i) for i in string if i.isalpha()]
+    return alphabets
+st=input("Enter the string")
+print(extractAllAlphabets(st))
+# input-->3st57rin##g output-->['s','t','r','i','n','g']
+
+# 26. Count the number of uppercase letters in a string
+def countNoUppercase(string):
+    count = sum(1 for i in string if i.isupper())
+    return count
+
+letters = input("Enter the string: ")
+print(countNoUppercase(letters))
+# input-->SsTRtrinINGg  output-->6
+
+# 27. Count the number of lowercase letters in a string.
+def countNoLowercase(string):
+    counts = sum(1 for i in string if i.islower())
+    return counts
+
+letters1 = input("Enter the string: ")
+print(countNoLowercase(letters1))
+# output--> 2 input-->stRING
+
+# 28. Swap the case of each character in a string.
+def swapcaseEachChar(string):
+    return string.swapcase()
+str=input("enter the string")
+print(swapcaseEachChar(str))
+# input--> string output-->STRING
+
+# 29. Remove a specific word from a string.
+def remove_word(text, word_to_remove):
+    return text.replace(word_to_remove, '')
+
+string = "This is an example sentence."
+word = "example"
+new_string = remove_word(string, word)
+print(new_string)  # Output: "This is an  sentence."
+
+
