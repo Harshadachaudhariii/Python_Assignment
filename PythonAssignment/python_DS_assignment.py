@@ -166,3 +166,36 @@ def findLongestWord(sentence):
 sentence = "The quick browns fox jumps over the lazy dog"
 print("The longest word is:", findLongestWord(sentence))   #output-->browns
 
+# 21. Find the shortest word in a string.
+def findShortestWord(sentence1):
+    words=sentence1.split()
+    shortesWord=words[0]
+    for word in words:
+        if len(word)<len(shortesWord):
+            shortesWord=word
+    return shortesWord    
+
+sentence1 = "The quick browns fox jumps over the lazy dog"
+print("The longest word is:", findShortestWord(sentence1))  #output-->The
+
+# 22. Reverse the order of words in a string.
+def reverseOrderOfWords(sentence2):
+    words = sentence2.split()
+    reversed_words = words[::-1]
+    return ' '.join(reversed_words)
+
+sentence2 = "The quick brown fox jumps over the lazy dog"
+print(reverseOrderOfWords(sentence2))
+
+# output-->dog lazy the over jumps fox brown quick The
+
+# 23. Check if a string is alphanumeric.
+def checkAlphanumeric(string):
+    return string.isalnum()   #it is checking alphanumberic
+str8=input("enter the string")
+if checkAlphanumeric(str8):
+    print("It is alphanumeric string")
+else:    
+    print("It is not alphanumeric string")
+    
+    
