@@ -91,3 +91,85 @@ def reverseOrderElements(lists):
     return reverse
 myLists=[10,20,30,40,50]
 print(reverseOrderElements(myLists))  #output-->[50, 40, 30, 20, 10]
+
+# 11. Sort a list in ascending order.
+def sortListAscending(lists):
+    order= sorted(lists)
+    return order
+lit=[4,2,6,8,3,5]
+print(sortListAscending(lit))  #output-->[2, 3, 4, 5, 6, 8]
+
+# 12. Sort a list in descending order.
+def sortListDescending(lists):
+    desOrder=sorted(lists,reverse=True)
+    return desOrder
+myLists=[10,20,30,40,50]
+print(sortListDescending(myLists))   #output-->[50, 40, 30, 20, 10]
+
+# 13. Create a list of even numbers from 1 to 20.
+def listEvenNumbers():
+    list1=[i for i in range(1,21) if i%2==0]
+    return list1
+print(listEvenNumbers())  #output-->[2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+
+# 14. Create a list of odd numbers from 1 to 20.
+def listOddNumbers():
+    list2=[i for i in range(1,21) if i%2!=0]
+    return list2
+print(listOddNumbers())   #output-->[1, 3, 5, 7, 9, 11, 13, 15, 17, 19]
+
+# 15. Find the sum of all elements in a list.
+def sumOfAllElements(lists):
+    sums=sum(i for i in lists[0:] )
+    return sums
+lsit=[1,2,3,4,5]
+print(sumOfAllElements(lsit))  #output->15
+
+# 16. Find the maximum value in a list.
+def maximumValue(lists):
+    if not lists:
+        return None
+    maxi=lists[0]
+    for i in lists[0:]:
+        if i>maxi:
+            maxi=i
+    return maxi
+myLits3=[1,34,67,4,90,56]
+print(maximumValue(myLits3))   #output-->90
+
+# 17. Find the minimum value in a list.
+def minimumValue(lists):
+    if not lists:   #handle empty case 
+        return None
+    mini=lists[0]
+    for i in lists[0:]:
+        if i<mini:
+            mini=i
+    return mini
+myLits3=[34,6,78,-45,86]
+print(minimumValue(myLits3))   #output-->-45
+
+# 18. Create a list of squares of numbers from 1 to 10.
+def listOfSquares():
+    square=[i*i for i in range(1,11)]
+    return square
+print(listOfSquares())  #output-->[1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+
+# 19. Create a list of random numbers.
+import random 
+
+def listOfRandomNumbers(start,end,size):
+    return [random.randint(start,end) for _ in range(size)]
+
+start=1
+end=20
+size=10
+print(listOfRandomNumbers(start,end,size))     #output-->[8, 15, 3, 10, 11, 12, 15, 18, 7, 13]
+
+# 20. Remove duplicates from a list.
+def removeDuplicates(myList):
+    removeDupli=list(set(myList))
+    return removeDupli
+list5=[1,4,4,2,3,5,1]
+print(removeDuplicates(list5))   #output-->[1, 2, 3, 4, 5]
+
