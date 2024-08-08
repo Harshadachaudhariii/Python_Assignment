@@ -1,5 +1,6 @@
 # 1. Create a list with integers from 1 to 10.
-lists=[1,2,3,4,5,6,7,8,9,10]
+lists=[i for i in range(1,11)]
+print(lists)  #[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 # 2. Find the length of a list without using the `len()` function.
 def length(lists):

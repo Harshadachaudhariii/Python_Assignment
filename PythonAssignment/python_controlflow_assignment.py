@@ -94,5 +94,17 @@ else:
 
 print(f"The student's grade is: {grade}")
            
-    
+# Nested If-Else Statements
+#  11. Write a program to find the largest among three numbers using nested if-else statements
+number3=23
+number4=50
+number5=13
+if number>number1 and number>number2:
+    print(f"The largest number {number} is among three")
+else:
+    if number1>number and number1>number2:
+        print(f"The largest number {number1} is among three")
+    # output-->The largest number 50 is among three
+    else:
+        print(f"The largest number {number2} is among three")
     
