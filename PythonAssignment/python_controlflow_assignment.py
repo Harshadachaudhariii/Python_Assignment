@@ -77,7 +77,8 @@ else:
     print("Given string is not a palindrome")
   
 # 10. Write a Python program to calculate the grade based on a student's score.
-score=int(input("enter the score"))
+# score=int(input("enter the score"))
+score=45
 if score >= 90:
     grade = 'A'
 else:
@@ -107,4 +108,90 @@ else:
     # output-->The largest number 50 is among three
     else:
         print(f"The largest number {number2} is among three")
+        
+# 12. Implement a program to determine if a triangle is equilateral, isosceles, or scalene.
+side1=7
+side2=10
+side3=5
+if side1 + side2 > side3 and side2 + side3 > side1 and side3 + side1 > side2:
+    if side1 == side2 == side3:
+        print("A triangle is equilateral")
+    else:
+        if side1 == side2 or side2 == side3 or side3 == side1:
+            print("A triangle is isosceles")
+        else:
+            print("A triangle is scalene")
+            # ouput-->A triangle is scalene
+else:
+    print("The sides do not form a valid triangle")     
     
+# 13. Develop a program that checks if a year is a leap year and also if it is a century year
+# year1 = int(input("Enter a year: "))
+year1=1994
+
+# Check if it's a century year
+if year1 % 100 == 0:
+    is_century = True
+else:
+    is_century = False
+
+# Check if it's a leap year
+if (year1 % 4 == 0 and year1 % 100 != 0) or (year1 % 400 == 0):
+    is_leap = True
+else:
+    is_leap = False
+
+# Output results
+if is_leap and is_century:
+    print(f"{year1} is a leap year and also a century year.")
+else:
+    if is_leap:
+        print(f"{year1} is a leap year but not a century year.")
+    else:
+        if is_century:
+            print(f"{year1} is not a leap year but it is a century year.")
+        else:
+            print(f"{year1} is neither a leap year nor a century year.")
+
+
+# 14. Write a Python script to determine if a number is positive, negative, or zero.
+
+numbers=-8
+if numbers<0:
+    print("A number is negative")   #<--output
+else:
+    if numbers >0:
+        print("A number is positive")
+    else:
+        print("A number is zero")    
+
+#  15. Create a program to check if a person is a teenager (between 13 and 19 years old)
+
+teenagerAge=34
+if teenagerAge<13:
+    print("A person is child")
+else:
+    if teenagerAge>=13 and teenagerAge<=19:
+        print("A person is teenager")
+    else:
+        print("A person is adult") #<--output
+        
+# 16. Develop a program that determines the type of angle based on its measure (acute, obtuse, or right)                   
+    
+angle1 = 60
+angle2 = 60
+angle3 = 60
+ 
+
+if angle1 + angle2 + angle3 == 180:
+    if angle1 == 90 or angle2 == 90 or angle3 == 90:
+        print("It is a right angle")
+    elif angle1 > 90 or angle2 > 90 or angle3 > 90:
+        print("It is an obtuse angle")
+    else:
+        print("It is an acute angle")   #<--output
+else:
+    print("It is not a valid triangle")
+    
+    
+
