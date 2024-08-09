@@ -1,3 +1,103 @@
+# Basics of Functions:
+# 1.Write a Python program that defines a function to calculate the sum of two numbers and then calls the function.
+def calculateSum(num1,num2):
+    return num1+num2
+print("The sum of the two number ",calculateSum(2,5))  #output-->7
+
+# 2. Create a Python function that takes two arguments and returns their product.
+def productOfTwoNum(num1,num2):
+    return num1*num2
+print(productOfTwoNum(2,4))   #output-->8
+
+
+# Function Parameters and Arguments:
+# 1.Write a Python program that defines a function with default argument values.
+def sums(a=9,b=10):
+    return a+b
+print(sums())   #output-->19
+
+# 2.Create a Python function that accepts a variable number of arguments and calculates their sum.
+def variableNoArgumentSum(*arg):
+    sums=0
+    for i in arg:
+        sums+=i    
+    return sums
+print(variableNoArgumentSum(1,2,3,4,5,6))     #output-->21
+
+# Return Values and Scoping:
+# 1.Write a Python program that demonstrates the use of global variables within functions.
+counter=0
+def increment():
+    global counter
+    counter+=1
+    print("The increment value of the counter is ",counter)
+ 
+def decrement():
+    global counter
+    counter-=1
+    print("The decrement value of the counter is ",counter) 
+
+increment()   #output-->1
+decrement()   ##output-->0
+
+#2.Create a Python function that calculates the factorial of a number and returns it.
+def calculFact(n):
+    fact=1
+    for i in range(1,n+1):
+        fact*=i
+    return fact
+print(calculFact(6))  #output-->720     
+
+#3.How can you access variables defined outside a function from within the function?
+number=2
+def accessVariable():
+    # accessing global varibale
+    print("Variable inside the function ",number)   #output-->2
+accessVariable()   
+def modifyVariable():
+    global number
+    number+=1
+    print("The modifying value of global variable is ",number)  #output-->3
+modifyVariable()
+print("Value of x outside the function after modification:", number)  #output-->3      
+
+# Lambda Functions and Higher-Order Functions:
+# 1.Write a Python program that uses lambda functions to sort a list of tuples based on the second element.
+tupleList=[(3,2),(2,1),(1,5),(4,3),(2,6),(6,4)]
+sortListOfTuples=sorted(tupleList,key=lambda x:x[1])
+print(sortListOfTuples)  #output-->[(2, 1), (3, 2), (4, 3), (6, 4), (1, 5), (2, 6)]
+
+# 2.Explain the concept of higher-order functions in Python, and provide an example.
+def operations(operation,x,y):   #taking argument three parameter
+    return operation(x,y)     #first parameter is use to function
+def add(x,y):
+    return x+y
+def mul(x,y):
+    return x*y
+
+result1=operations(add,2,4)
+result2=operations(mul,2,4)
+print("The sums is ",result1)   #output-->The sums is  6
+print("The product is ",result2)   #output-->The product is 8
+
+# 3.Create a Python function that takes a list of numbers and a function as arguments, applying the function to each element in the list.
+
+def applyEach(elements, func):
+    return [func(element) for element in elements]
+
+numbers = [1, 2, 3, 4, 5]
+
+# Define a function to be applied
+def square(x):
+    return x ** 2
+
+# Apply the function to each element in the list
+squared_numbers = applyEach(numbers, square)
+
+print(squared_numbers)  # Output: [1, 4, 9, 16, 25]
+
+
+
 # function using for loop
 # 1.Write a Python program to print numbers from 1 to 10 using a for loop.
 def num_print():
