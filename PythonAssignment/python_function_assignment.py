@@ -1,3 +1,4 @@
+import math
 # Basics of Functions:
 # 1.Write a Python program that defines a function to calculate the sum of two numbers and then calls the function.
 def calculateSum(num1,num2):
@@ -23,6 +24,8 @@ def variableNoArgumentSum(*arg):
         sums+=i    
     return sums
 print(variableNoArgumentSum(1,2,3,4,5,6))     #output-->21
+
+
 
 # Return Values and Scoping:
 # 1.Write a Python program that demonstrates the use of global variables within functions.
@@ -61,6 +64,9 @@ def modifyVariable():
 modifyVariable()
 print("Value of x outside the function after modification:", number)  #output-->3      
 
+
+
+
 # Lambda Functions and Higher-Order Functions:
 # 1.Write a Python program that uses lambda functions to sort a list of tuples based on the second element.
 tupleList=[(3,2),(2,1),(1,5),(4,3),(2,6),(6,4)]
@@ -95,6 +101,266 @@ def square(x):
 squared_numbers = applyEach(numbers, square)
 
 print(squared_numbers)  # Output: [1, 4, 9, 16, 25]
+
+
+
+#  function using if else 
+# 1. Write a Python program to check if a number is positive, negative, or zero using an if-else statement
+def checkNumber(n):
+    if n<0:
+        print("Number is negative")
+    elif n>0:
+        print("Number is positive")   #<--output
+    else:
+        print("Number is zero")
+                
+checkNumber(5)
+
+# 2.Create a Python program that checks if a given number is even or odd using an if-else statement.
+def checkEvenOdd(m):
+    if m%2==0:
+        print("Number is even ")   #<--output
+    else:
+        print("Number is odd")
+
+checkEvenOdd(4)            
+
+# 3.Write a Python program to determine the largest of three numbers using if-else.
+def determineLargestNum(num1,num2,num3):
+    if (num1>num2 and num1>num3) :
+        print(f"The number {num1} is largest among three ")
+    elif (num2>num3 and num2>num1):
+        print(f"The number {num2} is largest among three ")
+    else:
+        print(f"The number {num3} is largest among three")   #<--output 
+ 
+determineLargestNum(23,34,56)    
+
+# 4.Write a Python program that calculates the absolute value of a number using if-else.
+def absolute(n):
+    if n > 0:
+        return n
+    else:
+        return -n
+print(absolute(-13))    #output-->13
+
+# 5.Create a Python program that checks if a given character is a vowel or consonant using if-else.
+def checkVowelConsonant(character):
+    vowels='aeiou'
+    if character in vowels:
+        print("A given character is a vowel ")
+    else:    
+        print("A given character is a consonant ")  #<--output
+
+checkVowelConsonant('y')        
+
+# 6.Write a Python program to determine if a user is eligible to vote based on their age using if-else.
+def checkEligible(age):
+    if age >= 18:
+        print("A user is eligible to vote")  #<--output
+    else:
+        print("A user is not eligible to vote")
+  
+checkEligible(34)
+        
+# 7. Create a Python program that calculates the discount amount based on the purchase amount using if-else.
+def discountAmount(purchaseAmount):
+    if purchaseAmount>=1000:
+        discount=purchaseAmount*0.1   # 10% discount for purchases of $1000 or more
+    elif purchaseAmount>=500:
+        discount=purchaseAmount*0.05    # 5% discount for purchases of $500 or more
+    else:
+        discount=0   # No discount for purchases below $500
+        
+    return discount
+
+print(discountAmount(400))  #output-->0
+
+# 8.Write a Python program to check if a number is within a specified range using if-else.
+def checkSpecifiedRange(number,start,end):
+    if number>=start and number<=end:
+        print("A number is within a specified range")  #<--output
+        
+    else:
+        print("A number is not within a specified range")    
+        
+number=int(input("enter the number"))  #20
+start=int(input("Enter the lower bound"))  #10
+end=int(input("enter the upper bound"))    #30       
+checkSpecifiedRange(number,start,end)        
+       
+# 9.Create a Python program that determines the grade of a student based on their score using if-else.
+def determineGrade(score):
+    if score >= 90:
+        print("Grade is A")
+    elif score >= 80:
+        print("Grade is B")
+    elif score >= 70:
+        print("Grade is C")
+    elif score >= 60:
+        print("Grade is D")
+    else:
+        print("Grade is F")
+score=int(input("enter the score"))      #output-->67                         
+determineGrade(score)                       
+
+# 10.Write a Python program to check if a string is empty or not using if-else.
+def checkEmptyString(string):
+    if string=="":
+        print("String is empty")
+    else:
+        print("String is not empty")  #<--output
+string="Hello"
+checkEmptyString(string)          
+
+# 11.Create a Python program that identifies the type of a triangle (e.g., equilateral, isosceles, or scalene) based on input values using if-else.
+def checkTypeTriangle(side1,side2,side3):
+    if side1==side2 and side2==side3 and side3==side1:
+        print("Triangle is equilateral") 
+    elif side1==side2 or side2==side3 or side3==side1:
+        print("Triangle is isosceles ")  #<--output
+    else:
+        print("Triangle is scalene")   
+checkTypeTriangle(12,12,10)  
+
+#12.Write a Python program to determine the day of the week based on a user-provided number using if-else.
+def determineDayWeek(num):
+    if num == 1:
+        return "Monday"
+    elif num == 2:
+        return "Tuesday"
+    elif num == 3:
+        return "Wednesday"   #<--output
+    elif num== 4:
+        return "Thursday"
+    elif num ==5:
+        return "Friday"
+    elif num==6:
+        return "Saturday"
+    elif num == 7:
+        return "Sunday"
+    else:
+        return "Invalid number! Please enter a number between 1 and 7."
+num=int(input("Enter a number (1-7) to get the day of the week: "))   #input-->3
+print(determineDayWeek(num))   
+
+# 13.Create a Python program that checks if a given year is a leap year using both if-else and a function.
+def checkLeapYear(years):
+    if (years % 4 == 0 and years % 100 != 0) or (years % 400 == 0):
+        print("A given year is a leap year")  #<--output
+    else:
+        print("A given year is not a leap year")    
+
+year1=2024
+checkLeapYear(year1) 
+
+# 14.Write a Python program to categorize a given character as uppercase, lowercase, or neither using if-else.
+def checkCharacterCase(characters):
+    if characters.isupper():
+        print("Given character is in upper case")
+    elif characters.islower():
+        print("Given character is in lower case")  #<--output
+    else:
+        print("Given character is neither lower case or upper case")        
+
+charact="h"
+checkCharacterCase(charact)
+
+# 15.Write a Python program to determine if a given number is prime or not using if-else.
+def checkPrime(n):
+    if n <= 1:
+        print("Given number is not a prime number")
+    elif n == 2:
+        print("Given number is a prime number")
+    else:
+        for i in range(2, int(n**0.5) + 1):
+            if n % i == 0:   
+                print("Given number is not a prime number")
+                return 
+    print("Given number is a prime number")  #<==output
+
+n = 29
+checkPrime(n)
+
+
+# 16.Create a Python program that checks if a given year is a century year or not using if-else
+def checkCenturyYear(years):
+    if years%100==0:
+        print("A given year is a century year")
+    else:    
+        print("A given year is not a century year")  #<--output
+year2=2001
+checkCenturyYear(year2)
+
+# 17.Create a Python program that determines the eligibility of a person for a senior citizen discount based on age using if-else.
+def seniorCitizenDiscount(age):
+    if age>=65:
+        return "Eligible for senior citizen discount."  #<--output
+    else:
+        return "Not eligible for senior citizen discount."
+    
+age=int(input("enter the age"))  #89
+print(seniorCitizenDiscount(age))
+
+# 18.Write a Python program to determine if a given number is a perfect square using if-else.
+def determinePerfectSquare(n):
+    if n < 0:
+        return "Negative numbers cannot be perfect squares."
+    sqrt=math.isqrt(n)
+    if sqrt*sqrt==n:
+        return "The number is a perfect square." #<--output
+    else:
+        return "The number is not a perfect square."
+n=25
+print(determinePerfectSquare(n))
+
+# 19.Create a Python program that calculates the BMI (Body Mass Index) of a person based on their weight and height using if-else.
+def calculBMI(weight,height):
+    
+    height=height/ 100    ## Convert height from cm to meters
+    bodyMassIndex= weight / (height*height)
+    
+    if bodyMassIndex <18.5:
+        return "Underweight and possibly malnourished"
+    elif 18.5 <= bodyMassIndex <=24.9:
+        return "Health weight"   #<--output
+    elif 25.0 <= bodyMassIndex <=29.9:
+        return "Overweight"
+    elif bodyMassIndex >=30:
+        return "Obesity"
+    else:
+        return "Severe obesity" 
+    
+weight=int(input("Enter the weight"))        
+height=int(input("Enter theheight"))       
+print(calculBMI(weight,height))   # weight = 55 kg, height = 155 cm
+
+
+#20.Write a Python program to determine the roots of a quadratic equation using if-else.
+def deterQuadraticEqn(a,b,c):
+    
+    discriminant=b**2 - 4 * a *c
+    
+    if discriminant >0:
+        root1 = (-b + math.sqrt(discriminant))/ (2 * a)
+        root2 = (-b - math.sqrt(discriminant))/ (2 * a)
+        return f"Two distinct real roots: {root1} and {root2}"
+    
+    elif discriminant==0:
+        root= -b /(2 * a)
+        return f"One real root (repeated): {root}"
+    
+    else:
+        # No real roots (complex roots)
+        real_part = -b / (2 * a)
+        imaginary_part = math.sqrt(-discriminant) / (2 * a)
+        return f"Complex roots: {real_part} ± {imaginary_part}i"
+    
+a = float(input("Enter the coefficient a: "))  #1
+b = float(input("Enter the coefficient b: "))  #-3
+c = float(input("Enter the coefficient c: "))  #2
+
+print(deterQuadraticEqn(a,b,c))
 
 
 
